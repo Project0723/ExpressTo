@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style/style_shipment.css">-->
+    <title>Transactions_Customer</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: #dddfe2;
+            color: #fff;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1);
+            padding: 5px 5px 5px;
+        }
+
+        .main {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        .left, .right {
+            width: 150px;
+            background-color: #193c6f;
+            padding: 12px;
+        }
+
+        .left {
+            order: -1; /* Push to the left */
+            color:#fff;
+        }
+
+        .maincontent {
+            flex-grow: 1;
+            padding: 10px;
+        }
+
+        /*.bottom {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }*/
+
+        header .topleft img{
+            height: 55px;
+            width: 250px;
+        }
+        /*.section {
+            width: 100%;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }*/
+       .cs{
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: underline ;
+            color:#193c6f;
+        }
+        .box {
+            background-color: #dddfe2; /* Background color of the box */
+            padding: 20px; /* Add padding to create some space between the content and the edges of the box */
+            border-radius: 10px; /* Border radius to create soft edges */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    /* You can adjust the shadow color and spread radius as needed */
+        }
+        .sub_title{
+            color:#193c6f;
+            font-family: sans-serif;
+        }
+        .same{
+            font-size: 15px;
+            padding: 10px;
+            width: 50%;
+            color: #000;
+        }
+
+        .name{
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+        form input{
+            flex: 1;
+            border: 1px solid #dddfe2;
+            font-size: 17px;
+            padding: 14px 16px;
+            border-radius: 5px;
+            color: #1d2129;
+            outline-color: #8AB7EF;
+        }
+        .type select{
+            flex: 1;
+            padding: 14px 16px;
+            font-size: 15px;
+            cursor: pointer;
+            border: 1px solid #dddfe2;
+            border-radius: 5px;
+            color: grey;
+        }
+        .content{
+            flex: 1;
+            border: 1px solid #dddfe2;
+            font-size: 17px;
+            padding: 14px 16px;
+            border-radius: 5px;
+            color: #1d2129;
+            outline-color: #8AB7EF;
+            font-family: sans-serif;
+        }
+        .label{
+            flex: 1;
+            padding: 14px 16px;
+            cursor: pointer;
+            border: 1px solid #dddfe2;
+            border-radius: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+            display: block;
+            margin: 5px;
+
+        }
+        .submit{
+            background-color: #79c437;
+            font-size: 20px;
+            color: #fff;
+            line-height: 48px;
+            padding: 0 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            width: 20%;
+            transform: translateX(200%);
+            
+
+        }
+        .logout{
+            background-color: #79c437;
+            font-size: 15px;
+            color: #fff;
+            line-height: 20px;
+            padding: 0 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            width: 100%;
+        }
+        .ship, .trans{
+            height: 20px;
+            width: 20px;
+            padding-top: 10px;
+
+        }
+
+        .shipment{
+            background-color: #79c437;
+            font-size: 20px;
+            color: #fff;
+            line-height: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 10px;
+        }
+        .transactions{
+            background-color: #193c6f;
+            font-size: 20px;
+            color: #fff;
+            line-height: 20px;
+            padding: 0 16px;
+            border: 2px solid #79c437;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 10px;
+        }
+
+        .shipment,  .transactions {
+            display: block; /* Ensure each button is on a new line */
+            margin-bottom: 10px; /* Adjust the vertical spacing between buttons */
+        }
+
+
+        table {
+            width: 100%; /* Set table width to auto */
+            border-collapse: collapse; /* Collapse table borders */
+            border-radius: 6px;
+            font-family: sans-serif;
+        }
+
+        th, td {
+            border: 1px solid black; /* Add border to table cells */
+            padding: 8px; /* Add padding to table cells */
+        }
+        .tools{
+            display: block; /* Ensure image is displayed as a block element */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+        a {
+   text-decoration: none; /* Remove underline */
+   color: inherit; /* Inherit text color from parent */
+   /* Add any other styling as needed */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="topleft">
+                <img src="image/Express.To_logo_sm.png" alt="Express.To">
+            </div>
+        </header>
+        <div class="main">
+            <div class="left">
+                <section>
+                    <h2 >Hi, Lily!</h2><!--need kapangalan ng user na nag log in-->
+                    <hr>
+                    <button class="shipment"><a href="shipment_customer.html"><img src="image/shipment.png" alt="Shipment" class="ship"><br>Shipment</a></button>
+                    <button class="transactions"><img src="image/transaction.png" alt="Transactions" class="trans">Transactions</button>
+                    <button class="logout"><a href="log_in.html">Log out</a></button>
+                </section>
+            </div>
+            <div class="maincontent">
+                    <h1 class="cs">Transaction History</h1>
+                    <div class="box">
+                    <section class="section">
+                        <table border="1">
+                            <tr>
+                                <th>Shipment ID</th>
+                                <th>Sender</th>
+                                <th>Receiver</th>
+                                <th>Address</th>
+                                <th>Price</th>
+                                <th>Status</th>
+
+                            </tr>
+                            <tr>
+                                <td>EXTO0001</td>
+                                <td>Renato Madlangtuta</td>
+                                <td>Juan Dela Cruz</td>
+                                <td>Unit 101, Jackstone Street, Toronto, Ontario</td>
+                                <td>$25.50</td>
+                                <td>In Transit</td>
+                            </tr>
+                            <tr>
+                                <td>EXTO0002</td>
+                                <td>Kokey Okey</td>
+                                <td>Okoy Bods</td>
+                                <td>Unit 213, Saturn Street, Milkyway, Galaxy</td>
+                                <td>$5000.34</td>
+                                <td>Picked Up</td>
+                            </tr>
+                            <tr>
+                                <td>EXTO0003</td>
+                                <td>Mang Kanor</td>
+                                <td>Mang Juan</td>
+                                <td>Penthouse 1, Nuggets Street, InandOut, Alberta</td>
+                                <td>$234.78.50</td>
+                                <td>Delivered</td>
+                            </tr>
+                        </table>
+                </section>
+            </div>
+            <!--<div class="right">
+                <section>
+                    <h2>Right Section</h2>
+                    <p>This is content on the right side.</p>
+                </section>
+            </div>-->
+        </div>
+    </div>
+        <!--<footer class="bottom">
+            <h2>Footer Section</h2>
+        </footer>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manage Shipment</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="topleft">
+                <img src="image/Express.To_logo_sm.png" alt="Express.To">
+            </div>
+        </header>
+        <div class="main">
+            <div class="left">
+                <section>
+                    <h2>Hi, Lily!</h2>
+                    <hr>
+                    <button class="shipment"><a href="manage_shipment.html">Shipment</a></button>
+                    <button class="transactions"><a href="transactions_admin.html">Transactions</a></button>
+                    <button class="logout"><a href="log_in.html">Log out</a></button>
+                </section>
+            </div>
+            <div class="maincontent">
+                <h1 class="cs">Manage Shipment</h1>
+                    <div class="box">
+                            <h3 class="sub_title">Shipment ID</h3>
+                            <input type="text" id="shipmentId" placeholder="Enter Shipment ID" class="same">
+                            <button id="retrieve" type="submit" class="submit">Retrieve Data</button>
+                            <table id="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sender Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Unit</th>
+                                        <th>City</th>
+                                        <th>Province</th>
+                                        <th>Postal Code</th>
+                                        <th>Shipment Id</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--Data rows will be added here dynamically-->
+                                </tbody>
+                            </table>
+                        <hr>
+                            <h3 class="sub_title">Sender Information</h3>
+                            <div class="form_body">
+                                <div class="name">
+                                    <input type="text" placeholder="Sender Name" class="same" id="usname">
+                                    <input type="tel" placeholder="Phone Number" class="same" id="usphone">
+                                </div>
+                                <div class="name">
+                                    <input type="text" placeholder="Suite No./Unit" class="same" id="usunit"> 
+                                    <input type="text" placeholder="City" class="same" id="uscity">
+                                    <select id="usprovince" class="same">
+                                        <option disabled selected value="" class="same">Province</option>
+                                        <option value="bags" class="same">Alberta</option>
+                                        <option value="bagm" class="same">British Columbia</option>
+                                        <option value="bagl" class="same">Manitoba</option>
+                                        <option value="boxs" class="same">New Brunswick</option>
+                                        <option value="boxm" class="same">Newfoundland</option>
+                                        <option value="boxl" class="same">Labrador</option>
+                                        <option value="boxl" class="same">Nova Scotia</option>
+                                        <option value="boxl" class="same">Ontario</option>
+                                    </select>
+                                    <input type="text" placeholder="Postal Code" class="same" id="uspostal">
+                            </div>
+                        <button id="update" class="submit">Update Data</button>
+                    </div>
+                </div>
+            </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

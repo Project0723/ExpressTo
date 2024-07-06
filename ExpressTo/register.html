@@ -1,0 +1,50 @@
+<?php
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    include 'connect.php';
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+
+    $sql="insert into 'registration'(username,password)
+    values('$username','$password')";
+    $result=msqli_query($con,$sql);
+
+    if($result){
+        echo "Data inserted successfully";
+    }
+    else{
+        die(mysqli_error($con));
+    }
+
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="account.css">
+    <title>Signup</title>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="left">
+                <img src="image/Express.To_logo.png" alt="Express.To">
+            </div>
+            <div class="right">
+                <form action="connect.php" method="post">
+                    <div class="form_body">
+                        <input required type="text" placeholder="New Username" id="fname" name="username">
+                        <input required type="password"  placeholder="New Password" id="password" name="password">
+                        <hr>
+                        <button type="submit" class="create">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

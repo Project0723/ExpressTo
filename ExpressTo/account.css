@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+
+}
+header{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #F0F2F5;
+}
+
+header .main{
+    position: absolute;
+    top: 25%;
+    width: 70%;
+    gap: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    /*display: none;*/
+}
+
+header .main.left{
+    flex:1;
+    justify-content: center;
+}
+
+header .main .right{
+    flex: 1;
+}
+
+header .main .left img{
+    height: 500px;
+    width: 500px;
+}
+
+header .main .right form{
+    width: 396px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 100px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1);
+    padding: 20px 0 28px;
+}
+
+ .form_body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 12px;
+    gap: 15px;
+ }
+
+ form input{
+    flex: 1;
+    border: 1px solid #dddfe2;
+    font-size: 17px;
+    padding: 14px 16px;
+    border-radius: 5px;
+    color: #1d2129;
+    outline-color: #8AB7EF;
+ }
+
+ .login{
+    background-color: #193c6f;
+    font-size: 20px;
+    color: #fff;
+    line-height: 48px;
+    padding: 0 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    width: 100%
+ }
+
+ .forget{
+    text-align: center;
+    color: #193c6f;
+    font-size: 16px;
+    margin: 5px 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: sans-serif;
+ }
+
+ .forget:hover{
+    text-decoration: underline;
+ }
+
+ hr{
+    background: rgba(128, 128, 128, 0.349);
+    height: 0.2px;
+ }
+
+ .create{
+    background-color: #79c437;
+    font-size: 17px;
+    color: #fff;
+    width: 100%;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    line-height: 48px;
+    margin: auto;
+    cursor: pointer;
+    padding: 0 16px;
+ }
+
+ .signup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 432px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0, .1);
+    padding-bottom: 18px;
+    border-radius: 8px;
+    display: none;
+ }
+
+ .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px;
+ }
+
+ .top>div>h2{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: sans-serif;
+ }
+
+ .top>div>p{
+    color: #606770;
+    line-height: 24px;
+    font-size: 15px;
+    font-family: sans-serif;
+
+ }
+
+ .top img{
+    padding-bottom: 35px;
+    cursor: pointer;
+    width: 25px;
+ }
+
+ hr{
+    border: 0.1px;
+    background: grey;
+ }
+
+ .signup_body{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+ }
+
+ .same{
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    width: 50%;
+ }
+
+ .name{
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 15px;
+ }
+
+ .bottom input{
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 15px;
+    outline: none;
+ }
+
+ .signin{
+    height: 36px;
+    width: 194px;
+    background: #79c437; 
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 4px;
+    margin-left: 118px;
+    cursor: pointer;
+
+ }
+
+ .show{
+    display: block;
+ }
+ a {
+   text-decoration: none; /* Remove underline */
+   color: inherit; /* Inherit text color from parent */
+   /* Add any other styling as needed */
+}
